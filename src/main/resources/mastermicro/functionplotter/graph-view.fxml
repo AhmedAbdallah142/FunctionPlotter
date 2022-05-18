@@ -14,7 +14,7 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <LineChart fx:id="lineChart" prefHeight="587.0" prefWidth="829.0">
+    <LineChart fx:id="lineChart" createSymbols="false" prefHeight="587.0" prefWidth="829.0">
         <xAxis>
             <NumberAxis side="BOTTOM" />
         </xAxis>

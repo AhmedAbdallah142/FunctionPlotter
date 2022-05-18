@@ -34,16 +34,7 @@ public class GraphController {
     }
     @FXML
     protected void Clear() {
-        Message.setText("Welcome to JavaFX Application!");
-    }
-
-    @FXML
-    public void initialize() {
-
-    }
-
-    public static Function<Double, Double> fromStringToFunction(String expression) {
-        return x -> (double) Eval.x(x, expression);
+        lineChart.getData().clear();
     }
 
     public void plotFunction(String function,double MinX, double MaxX,int nPoint) {
@@ -51,8 +42,7 @@ public class GraphController {
         series.setName(function);
 
         DoubleEvaluator eval = new DoubleEvaluator();
-        StaticVariableSet<Double> variables = new StaticVariableSet<Double>();
-//        GraphicsContext gc = canvas.getGraphicsContext2D();
+        StaticVariableSet<Double> variables = new StaticVariableSet<>();
         variables.set("x", MinX);
         variables.set("X", MinX);
         series.getData().add(new  XYChart.Data(MinX, eval.evaluate(function, variables)));
@@ -60,20 +50,7 @@ public class GraphController {
             variables.set("x", x);
             variables.set("X", x);
             series.getData().add(new  XYChart.Data(x, eval.evaluate(function, variables)));
-//            gc.lineTo(x,eval.evaluate(function, variables));
         }
         lineChart.getData().add(series);
-//        gc.stroke();
     }
-
-    public void plotFunction(Function<Double, Double> function,double MinX, double MaxX,int nPoint) {
-//        Canvas plot = new Canvas();
-//        GraphicsContext gc = canvas.getGraphicsContext2D();
-//        gc.moveTo(MinX, function.apply(MinX));
-//        for (double x = MinX; x <= MaxX; x+=(MaxX-MinX)/nPoint) {
-//            gc.lineTo(x, function.apply(x));
-//        }
-//        gc.stroke();
-    }
-
 }
