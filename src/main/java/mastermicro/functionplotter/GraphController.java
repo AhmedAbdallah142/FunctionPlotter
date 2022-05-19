@@ -30,27 +30,40 @@ public class GraphController {
 
     @FXML
     protected void Plot() {
-        plotFunction(Equation.getText(),Double.parseDouble(MinX.getText()),Double.parseDouble(MaxX.getText()),Integer.parseInt(nPoints.getText()));
+        try {
+            Message.setText("");
+            plotFunction(Equation.getText(),Double.parseDouble(MinX.getText()),Double.parseDouble(MaxX.getText()),Integer.parseInt(nPoints.getText()));
+        }catch (Exception e){
+            Message.setText(e.getMessage());
+        }
     }
     @FXML
     protected void Clear() {
+        Message.setText("");
         lineChart.getData().clear();
     }
 
     public void plotFunction(String function,double MinX, double MaxX,int nPoint) {
+        if (MaxX < MinX)
+            throw new RuntimeException("Max X must be greater than Min X");
+        if((nPoint < 1)||(nPoint > 5000))
+            throw new RuntimeException("Number of points must be between 1 and 5000");
+
         XYChart.Series<NumberAxis,NumberAxis> series = new XYChart.Series<>();
         series.setName(function);
-
         DoubleEvaluator eval = new DoubleEvaluator();
         StaticVariableSet<Double> variables = new StaticVariableSet<>();
         variables.set("x", MinX);
         variables.set("X", MinX);
         series.getData().add(new  XYChart.Data(MinX, eval.evaluate(function, variables)));
-        for (double x = MinX; x <= MaxX; x+=(MaxX-MinX)/nPoint) {
+        for (double x = MinX; x < MaxX; x+=(MaxX-MinX)/nPoint) {
             variables.set("x", x);
             variables.set("X", x);
             series.getData().add(new  XYChart.Data(x, eval.evaluate(function, variables)));
         }
+        variables.set("x", MaxX);
+        variables.set("X", MaxX);
+        series.getData().add(new  XYChart.Data(MaxX, eval.evaluate(function, variables)));
         lineChart.getData().add(series);
     }
 }
