@@ -34,8 +34,11 @@ public class GraphController {
     }
     @FXML
     protected void Clear() {
-        Message.setText("");
         lineChart.getData().clear();
+        Message.setText("");
+        MaxX.setText("");
+        MinX.setText("");
+        nPoints.setText("");
     }
 
     public void plotFunction(String function,double MinX, double MaxX,int nPoint) {
