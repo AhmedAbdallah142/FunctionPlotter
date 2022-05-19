@@ -41,27 +41,28 @@ public class GraphController {
         nPoints.setText("");
     }
 
+    public void setLineChart(LineChart<NumberAxis,NumberAxis> l){
+        lineChart = l;
+    }
+
     public void plotFunction(String function,double MinX, double MaxX,int nPoint) {
         if (MaxX < MinX)
             throw new RuntimeException("Max X must be greater than Min X");
         if((nPoint < 1)||(nPoint > 5000))
             throw new RuntimeException("Number of points must be between 1 and 5000");
-
         XYChart.Series<NumberAxis,NumberAxis> series = new XYChart.Series<>();
         series.setName(function);
         DoubleEvaluator eval = new DoubleEvaluator();
+        Double temp;
         StaticVariableSet<Double> variables = new StaticVariableSet<>();
-        variables.set("x", MinX);
-        variables.set("X", MinX);
-        series.getData().add(new  XYChart.Data(MinX, eval.evaluate(function, variables)));
-        for (double x = MinX; x < MaxX; x+=(MaxX-MinX)/nPoint) {
+        for (Double x = MinX; x <= MaxX; x+=(MaxX-MinX)/nPoint) {
             variables.set("x", x);
             variables.set("X", x);
-            series.getData().add(new  XYChart.Data(x, eval.evaluate(function, variables)));
+            temp = eval.evaluate(function, variables);
+            if(temp.isInfinite())
+                throw new RuntimeException("Reached Infinity");
+            series.getData().add(new  XYChart.Data(x, temp));
         }
-        variables.set("x", MaxX);
-        variables.set("X", MaxX);
-        series.getData().add(new  XYChart.Data(MaxX, eval.evaluate(function, variables)));
         lineChart.getData().add(series);
     }
 }

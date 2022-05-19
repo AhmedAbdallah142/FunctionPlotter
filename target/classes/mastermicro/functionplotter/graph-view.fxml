@@ -41,5 +41,5 @@
          <Button layoutX="692.0" layoutY="76.0" mnemonicParsing="false" onAction="#Clear" prefHeight="29.0" prefWidth="112.0" text="Clear" textFill="RED" />
       </children>
    </AnchorPane>
-   <Label fx:id="Message" textFill="RED" />
+   <Label id="error-message" fx:id="Message" textFill="RED" />
 </VBox>
