@@ -3,15 +3,10 @@ package mastermicro.functionplotter;
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 import com.fathzer.soft.javaluator.StaticVariableSet;
 import javafx.fxml.FXML;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
-
-import java.util.function.Function;
-import groovy.util.Eval;
 import javafx.scene.control.TextField;
 
 public class GraphController {
