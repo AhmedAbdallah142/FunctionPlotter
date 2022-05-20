@@ -9,6 +9,11 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+/**
+ * the controller class used to control with fxml
+ * interact with user input
+ * @author Ahmed Abdallah
+ */
 public class GraphController {
     @FXML
     private Label Message;
@@ -23,6 +28,11 @@ public class GraphController {
     @FXML
     private LineChart<NumberAxis,NumberAxis> lineChart;
 
+    /**
+     * called when the plot button is pressed
+     * collecting and validating user input
+     * show error message to user
+     */
     @FXML
     protected void Plot() {
         try {
@@ -32,6 +42,11 @@ public class GraphController {
             Message.setText(e.getMessage());
         }
     }
+
+    /**
+     * called when the clear button is pressed
+     * clearing user inputs and charts drawn
+     */
     @FXML
     protected void Clear() {
         lineChart.getData().clear();
@@ -41,10 +56,14 @@ public class GraphController {
         nPoints.setText("");
     }
 
-    public void setLineChart(LineChart<NumberAxis,NumberAxis> l){
-        lineChart = l;
-    }
-
+    /**
+     * validate given parameters
+     * evaluate the given function at the period from min x to max x with rate of n points
+     * @param function the required to plot
+     * @param MinX the smallest value of x
+     * @param MaxX the max value of x
+     * @param nPoint the total number of points to drawn
+     */
     public void plotFunction(String function,double MinX, double MaxX,int nPoint) {
         if (MaxX < MinX)
             throw new RuntimeException("Max X must be greater than Min X");
