@@ -9,29 +9,40 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <HBox alignment="CENTER" minHeight="650.0" minWidth="930.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mastermicro.functionplotter.GraphController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <AnchorPane prefHeight="200.0" prefWidth="200.0">
+   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
       <children>
-         <Button layoutX="44.0" layoutY="414.0" mnemonicParsing="false" onAction="#Plot" prefHeight="50.0" prefWidth="112.0" text="Plot" textFill="WHITE">
-            <font>
-               <Font name="Chiller" size="31.0" />
-            </font></Button>
-         <TextField fx:id="Equation" layoutY="99.0" prefHeight="33.0" prefWidth="217.0" promptText="use x only as a variable" />
-         <TextField fx:id="nPoints" layoutX="40.0" layoutY="188.0" prefHeight="29.0" prefWidth="120.0" promptText="max 5000" />
-         <Label layoutX="65.0" layoutY="65.0" text="Equation:" />
-         <Label layoutX="63.0" layoutY="153.0" text="#points:" />
-         <Label layoutX="71.0" layoutY="240.0" text="Min X:" />
-         <Label layoutX="69.0" layoutY="323.0" text="Max X:" />
-         <TextField fx:id="MinX" layoutX="40.0" layoutY="271.0" prefHeight="29.0" prefWidth="120.0" />
-         <TextField fx:id="MaxX" layoutX="40.0" layoutY="355.0" prefHeight="29.0" prefWidth="120.0" />
-         <Button layoutX="44.0" layoutY="481.0" mnemonicParsing="false" onAction="#Clear" prefHeight="29.0" prefWidth="112.0" text="Clear" textFill="RED" />
+         <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <children>
+               <Button layoutX="44.0" layoutY="414.0" mnemonicParsing="false" onAction="#Plot" prefHeight="50.0" prefWidth="112.0" text="Plot" textFill="WHITE">
+                  <font>
+                     <Font name="Chiller" size="31.0" />
+                  </font>
+               </Button>
+               <TextField fx:id="Equation" layoutY="99.0" prefHeight="33.0" prefWidth="217.0" promptText="use x only as a variable" />
+               <TextField fx:id="nPoints" layoutX="40.0" layoutY="188.0" prefHeight="29.0" prefWidth="120.0" promptText="max 5000" />
+               <Label layoutX="65.0" layoutY="65.0" text="Equation:" />
+               <Label layoutX="63.0" layoutY="153.0" text="#points:" />
+               <Label layoutX="71.0" layoutY="240.0" text="Min X:" />
+               <Label layoutX="69.0" layoutY="323.0" text="Max X:" />
+               <TextField fx:id="MinX" layoutX="40.0" layoutY="271.0" prefHeight="29.0" prefWidth="120.0" />
+               <TextField fx:id="MaxX" layoutX="40.0" layoutY="355.0" prefHeight="29.0" prefWidth="120.0" />
+               <Button layoutX="44.0" layoutY="481.0" mnemonicParsing="false" onAction="#Clear" prefHeight="29.0" prefWidth="112.0" text="Clear" textFill="RED" />
+            </children>
+         </AnchorPane>
+         <Label id="error-message" fx:id="Message" textFill="RED">
+            <VBox.margin>
+               <Insets top="30.0" />
+            </VBox.margin>
+         </Label>
       </children>
-   </AnchorPane>
+   </VBox>
    <Separator orientation="VERTICAL" prefHeight="200.0" />
     <LineChart fx:id="lineChart" createSymbols="false" minHeight="600.0" minWidth="600.0">
         <xAxis>
@@ -41,5 +52,4 @@
             <NumberAxis side="LEFT" />
         </yAxis>
     </LineChart>
-   <Label id="error-message" fx:id="Message" textFill="RED" />
 </HBox>

@@ -66,9 +66,9 @@ public class GraphController {
      */
     public void plotFunction(String function,double MinX, double MaxX,int nPoint) {
         if (MaxX < MinX)
-            throw new RuntimeException("Max X must be greater than Min X");
+            throw new RuntimeException("Min X greater");
         if((nPoint < 1)||(nPoint > 5000))
-            throw new RuntimeException("Number of points must be between 1 and 5000");
+            throw new RuntimeException("nPoints 1:5000");
         XYChart.Series<NumberAxis,NumberAxis> series = new XYChart.Series<>();
         series.setName(function);
         DoubleEvaluator eval = new DoubleEvaluator();
