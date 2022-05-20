@@ -3,14 +3,15 @@ simple javafx function plotter app
 
 ## working Examples
 
-![image](https://user-images.githubusercontent.com/61004485/169409352-572a3372-9e48-49d5-ba44-ff06e44ec5af.png)
-![image](https://user-images.githubusercontent.com/61004485/169409593-d69fb1be-5706-4a3b-a5b1-d6f6f102d536.png)
-![image](https://user-images.githubusercontent.com/61004485/169409629-96724df1-f242-4149-a122-381b599c453e.png)
-![image](https://user-images.githubusercontent.com/61004485/169409796-de6c3b4c-8696-4585-81e1-4d37444ab7da.png)
+![image](https://user-images.githubusercontent.com/61004485/169529103-3de899db-a123-4ad1-8584-973f771232d3.png)
+![image](https://user-images.githubusercontent.com/61004485/169529205-733635e0-6d3d-47c5-a1d6-5d508514d010.png)
+![image](https://user-images.githubusercontent.com/61004485/169529294-a2af4342-e02d-4960-a4a9-d5d2249567ff.png)
+![image](https://user-images.githubusercontent.com/61004485/169529437-fedf8e18-967f-4766-8a07-7dc8f789493f.png)
+
 
 ## wrong Examples
-![image](https://user-images.githubusercontent.com/61004485/169409870-2ab53b63-9062-451f-bc93-e4220f16211e.png)
-![image](https://user-images.githubusercontent.com/61004485/169409920-92638572-4c93-418e-8f48-850d86e4fccd.png)
-![image](https://user-images.githubusercontent.com/61004485/169410031-2c4196bf-9cfb-42df-b244-0a3950970992.png)
-![image](https://user-images.githubusercontent.com/61004485/169410082-d8e3e44f-6fcd-4e4b-a691-7e9774dc4417.png)
-![image](https://user-images.githubusercontent.com/61004485/169410163-34237d0b-702f-469a-8d8f-6fc5b5f287ad.png)
+![image](https://user-images.githubusercontent.com/61004485/169530702-e45dde6b-2a4d-44b2-8a7f-8ec6e3d6603b.png)
+![image](https://user-images.githubusercontent.com/61004485/169530792-dae8c35a-b1bf-420c-96ce-6d496fbb3266.png)
+![image](https://user-images.githubusercontent.com/61004485/169531089-1bfd644c-fda3-415f-9518-c5b4399d83eb.png)
+![image](https://user-images.githubusercontent.com/61004485/169531187-70b7c17e-e383-4e9d-97fc-17ad1acbf4f6.png)
+![image](https://user-images.githubusercontent.com/61004485/169531275-8667e216-6776-4c7b-a7ec-a108cfabc068.png)
