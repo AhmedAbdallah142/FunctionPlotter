@@ -82,6 +82,12 @@ public class GraphController {
                 throw new RuntimeException("Reached Infinity");
             series.getData().add(new  XYChart.Data(x, temp));
         }
+        variables.set("x", MaxX);
+        variables.set("X", MaxX);
+        temp = eval.evaluate(function, variables);
+        if(temp.isInfinite())
+            throw new RuntimeException("Reached Infinity");
+        series.getData().add(new  XYChart.Data(MaxX, temp));
         lineChart.getData().add(series);
     }
 }

@@ -1,7 +1,7 @@
 .root{
     -fx-background-image: url("img.png");
     -fx-background-repeat: no-repeat;
-    -fx-background-size: 870 900;
+    -fx-background-size: 930 650;
     -fx-background-position: center center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
     -fx-font-smoothing-type: lcd;
